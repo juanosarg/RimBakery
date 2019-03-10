@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<RecipeDef>
+	<defName>RBK_GrindWheat</defName>
+	<label>grind wheat into flour</label>
+	<description>Grind wheat into flour.</description>
+	<jobString>Making flour.</jobString>
+	<workSpeedStat>CookSpeed</workSpeedStat>
+	<effectWorking>Cook</effectWorking>
+	<workAmount>700</workAmount>
+     <soundWorking>Recipe_CookMeal</soundWorking>
+	<ingredients>
+	  <li>
+	    <filter>
+	      <thingDefs>
+	        <li>RBK_Raw_CommonWheat</li>
+	       
+	      </thingDefs>
+	    </filter>
+	    <count>10</count>
+	  </li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+	    <li>RBK_Raw_CommonWheat</li>
+	   
+	  </thingDefs>
+      <specialFiltersToDisallow>
+        <li>AllowRotten</li>
+      </specialFiltersToDisallow>
+
+	</fixedIngredientFilter>
+	<products>
+	  <RBK_WheatFlour>4</RBK_WheatFlour>
+	</products>
+	<workSkill>Cooking</workSkill>
+	<recipeUsers>
+         <li>RBK_StoneGrinder</li>
+          
+     </recipeUsers>
+</RecipeDef>
+
+
+<RecipeDef>
+	<defName>RBK_BulkGrindWheat</defName>
+	<label>grind bulk wheat into flour</label>
+	<description>Grind bulk wheat into flour, gaining yield (+30%) at the expense of processing time (+10%).</description>
+	<jobString>Making bulk flour.</jobString>
+	<workSpeedStat>CookSpeed</workSpeedStat>
+	<effectWorking>Cook</effectWorking>
+	<workAmount>3750</workAmount>
+     <soundWorking>Recipe_CookMeal</soundWorking>         
+	<ingredients>
+	  <li>
+	    <filter>
+	      <thingDefs>
+	        <li>RBK_Raw_CommonWheat</li>
+	      </thingDefs>
+	    </filter>
+	    <count>50</count>
+	  </li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+	   <li>RBK_Raw_CommonWheat</li>
+	  </thingDefs>
+      <specialFiltersToDisallow>
+        <li>AllowRotten</li>
+      </specialFiltersToDisallow>
+
+	</fixedIngredientFilter>
+	<products>
+	  <RBK_WheatFlour>26</RBK_WheatFlour>
+	</products>
+	<workSkill>Cooking</workSkill>
+	<recipeUsers>
+         <li>RBK_StoneGrinder</li>
+          
+     </recipeUsers>
+</RecipeDef>
+
+<RecipeDef>
+	<defName>RBK_GrindBeets</defName>
+	<label>grind sugar beets into sugar</label>
+	<description>Grind sugar beets into sugar.</description>
+	<jobString>Making sugar.</jobString>
+	<workSpeedStat>CookSpeed</workSpeedStat>
+	<effectWorking>Cook</effectWorking>
+	<workAmount>700</workAmount>
+     <soundWorking>Recipe_CookMeal</soundWorking>
+	<ingredients>
+	  <li>
+	    <filter>
+	      <thingDefs>
+	        <li>RBK_Raw_SugarBeets</li>
+	       
+	      </thingDefs>
+	    </filter>
+	    <count>10</count>
+	  </li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+	    <li>RBK_Raw_SugarBeets</li>
+	   
+	  </thingDefs>
+      <specialFiltersToDisallow>
+        <li>AllowRotten</li>
+      </specialFiltersToDisallow>
+
+	</fixedIngredientFilter>
+	<products>
+	  <RBK_Sugar>4</RBK_Sugar>
+	</products>
+	<workSkill>Cooking</workSkill>
+	<recipeUsers>
+         <li>RBK_StoneGrinder</li>
+          
+     </recipeUsers>
+</RecipeDef>
+
+
+<RecipeDef>
+	<defName>RBK_BulkGrindBeets</defName>
+	<label>grind bulk sugar beets into sugar</label>
+	<description>Grind bulk sugar beets into sugar, gaining yield (+30%) at the expense of processing time (+10%).</description>
+	<jobString>Making bulk sugar.</jobString>
+	<workSpeedStat>CookSpeed</workSpeedStat>
+	<effectWorking>Cook</effectWorking>
+	<workAmount>3750</workAmount>
+     <soundWorking>Recipe_CookMeal</soundWorking>         
+	<ingredients>
+	  <li>
+	    <filter>
+	      <thingDefs>
+	        <li>RBK_Raw_SugarBeets</li>
+	      </thingDefs>
+	    </filter>
+	    <count>50</count>
+	  </li>
+	</ingredients>
+	<fixedIngredientFilter>
+	  <thingDefs>
+	   <li>RBK_Raw_SugarBeets</li>
+	  </thingDefs>
+      <specialFiltersToDisallow>
+        <li>AllowRotten</li>
+      </specialFiltersToDisallow>
+
+	</fixedIngredientFilter>
+	<products>
+	  <RBK_Sugar>26</RBK_Sugar>
+	</products>
+	<workSkill>Cooking</workSkill>
+	<recipeUsers>
+         <li>RBK_StoneGrinder</li>
+          
+     </recipeUsers>
+</RecipeDef>
+
+
+
+
+</Defs>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+
+
+
+
+
+	<ThingDef ParentName="BenchBase">
+		<defName>RBK_StoneGrinder</defName>
+		<label>Stone Grinder</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A traditional hand-crank grinding stone to turn wheat into flour and dried sugar beets into sugar.</description>
+		<graphicData>
+		<texPath>Things/Building/Kitchen/RBK_StoneGrinder</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+
+		<drawSize>(1,1)</drawSize>
+		</graphicData>
+    		<stuffCategories>
+      		<li>Stony</li>
+    		</stuffCategories>
+    		<costStuffCount>30</costStuffCount>
+    		<costList>
+      		<Steel>20</Steel>
+    		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(1,1)</size>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<designationCategory>Production</designationCategory>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+     <!-- <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>CookingTools</li>
+        </linkableFacilities>
+      </li>-->
+    </comps>
+
+	</ThingDef>
+	
+
+
+</Defs>

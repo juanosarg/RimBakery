@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GraphicOverhaul\Source\GraphicOverhaul\GraphicOverhaul\obj\Debug\GraphicOverhaul.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GraphicOverhaul\Assemblies\GraphicOverhaul.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GraphicOverhaul\Source\GraphicOverhaul\GraphicOverhaul\obj\Debug\GraphicOverhaul.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\GraphicOverhaul\Source\GraphicOverhaul\GraphicOverhaul\obj\Debug\GraphicOverhaul.csproj.CoreCompileInputs.cache

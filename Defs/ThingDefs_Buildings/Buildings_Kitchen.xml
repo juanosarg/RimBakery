@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+	<ThingDef ParentName="BenchBase">
+		<defName>GO_FueledStove</defName>
+		<label>fueled stove</label>
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<description>A simple wood-fueled stove with an attached countertop for preparing meals.</description>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_FueledStove</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+			<Steel>80</Steel>
+		</costList>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>GraphicOverhaul.ITab_BillsFood</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>160.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+					<li>GO_KitchenToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<building>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>GO_ElectricStove</defName>
+		<label>electric stove</label>
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<description>An electrically-powered stove with an attached countertop for preparing meals.</description>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_ElectricStove</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>GraphicOverhaul.ITab_BillsFood</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>350</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+					<li>GO_KitchenToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<building>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc8</designationHotKey>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_Fridge</defName>
+		<label>Fridge</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_Fridge</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>		
+			</damageData>
+			<drawSize>(3.5,3.5)</drawSize>
+			<shadowData>
+				<volume>(0.25,0.4,0.7)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>		
+		</graphicData>
+		<rotatable>true</rotatable>	
+		<uiIconScale>1</uiIconScale>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>70</pathCost>
+		<researchPrerequisites>
+			<li>AirConditioning</li>
+		</researchPrerequisites>	
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2</glowRadius>
+				<glowColor>(255,214,170,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>	
+		<statBases>
+			<Mass>80</Mass>		
+			<WorkToBuild>450</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.2</Flammability>
+		</statBases>
+		<description>Meals stored in this will not deteriorate, even if outside.</description>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<neverMultiSelect>true</neverMultiSelect>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<surfaceType>Item</surfaceType>
+		<constructEffect>ConstructMetal</constructEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="FurnitureWithQualityBase">
+		<defName>GO_SmallKitchenCounter</defName>
+		<label>kitchen counter</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_SmallCounter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<drawSize>(1,2)</drawSize>
+			<damageData>
+				<rectN>(0.125,0.296875,0.734375,0.421875)</rectN>
+				<rectS>(0.125,0.296875,0.734375,0.421875)</rectS>
+				<rectE>(0.234375,0.296875,0.5,0.546875)</rectE>
+				<rectW>(0.234375,0.296875,0.5,0.546875)</rectW>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>2</Beauty>
+		</statBases>
+		<description>A simple counter.</description>
+		<uiIconScale>1</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<rotatable>false</rotatable>
+		<costStuffCount>15</costStuffCount>
+		<pathCost>70</pathCost>
+		<passability>PassThroughOnly</passability>
+		<designationHotKey>Misc6</designationHotKey>
+		<fillPercent>0.20</fillPercent>
+	</ThingDef>
+
+	<ThingDef ParentName="FurnitureWithQualityBase">
+		<defName>GO_LargeKitchenCounters</defName>
+		<label>large kitchen counter</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_LargeKitchenCounters</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rectN>(0.125,0.296875,0.734375,0.421875)</rectN>
+				<rectS>(0.125,0.296875,0.734375,0.421875)</rectS>
+				<rectE>(0.234375,0.296875,0.5,0.546875)</rectE>
+				<rectW>(0.234375,0.296875,0.5,0.546875)</rectW>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<size>(3,2)</size>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>2</Beauty>
+		</statBases>
+		<description>A simple counter.</description>
+		<uiIconScale>1</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>15</costStuffCount>
+		<pathCost>70</pathCost>
+		<passability>PassThroughOnly</passability>
+		<designationHotKey>Misc6</designationHotKey>
+		<fillPercent>0.20</fillPercent>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenTools</defName>
+		<label>kitchen tools</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenTools</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(1,1)</drawSize>      
+		</graphicData>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<description>A simple drawer filled with kitchen tools.</description>
+		<uiIconScale>1</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<rotatable>false</rotatable>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>15</costStuffCount>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenBottles</defName>
+		<label>kitchen bottles</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenBottles</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<canOverlapZones>true</canOverlapZones>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<rotatable>false</rotatable>
+		<description>Some assorted bottles.</description>
+		<uiIconScale>1</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<costList>
+			<Steel>75</Steel>
+			<WoodLog>50</WoodLog>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenFruitBowl</defName>
+		<label>decorative fruit bowl</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenFruitBowl</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<canOverlapZones>true</canOverlapZones>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<rotatable>false</rotatable>
+		<description>This is tacky...</description>
+		<uiIconScale>0.5</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<costList>
+			<Steel>75</Steel>
+			<WoodLog>50</WoodLog>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenTeapot</defName>
+		<label>tea pot</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenTeapot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<canOverlapZones>true</canOverlapZones>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<rotatable>false</rotatable>
+		<description>This is tacky...</description>
+		<uiIconScale>0.5</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<costList>
+			<Steel>75</Steel>
+			<WoodLog>50</WoodLog>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenWine</defName>
+		<label>wine</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenWine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<canOverlapZones>true</canOverlapZones>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<rotatable>false</rotatable>
+		<description>This is tacky...</description>
+		<uiIconScale>0.5</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<costList>
+			<Steel>75</Steel>
+			<WoodLog>50</WoodLog>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenPlant</defName>
+		<label>plant</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenPlant</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,4)</drawSize>
+		</graphicData>
+		<canOverlapZones>true</canOverlapZones>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>2</Beauty>
+		</statBases>
+		<size>(1,2)</size>
+
+		<rotatable>false</rotatable>
+		<description>This is tacky...</description>
+		<uiIconScale>0.5</uiIconScale>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<clearBuildingArea>false</clearBuildingArea>
+		<fillPercent>0.0</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>false</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>	
+		<costList>
+			<Steel>75</Steel>
+			<WoodLog>50</WoodLog>
+		</costList>
+		<designationHotKey>Misc6</designationHotKey>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BenchBase">
+		<defName>GO_TableButcher</defName>
+		<label>butcher table</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A heavy table for butchering dead creatures into pieces of raw meat.</description>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_TableButcher</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Cleanliness>-15</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>GraphicOverhaul.ITab_BillsFood</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+					<li>GO_KitchenToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<designationHotKey>Misc3</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GO_KitchenToolCabinet</defName>
+		<label>kitchen tool cabinet</label>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_KitchenToolCabinet</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>40</Mass>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>Increases work speed. Needs to be placed near kitchen workbench. One workbench can be simultaneously linked to only two tools cabinets. Only works on kitchen workbenches (stoves and butcher tables).</description>
+		<size>(2,1)</size>
+		<costList>
+			<Steel>75</Steel>
+
+		</costList>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>2</maxSimultaneous>
+			</li>
+		</comps>
+		<designationHotKey>Misc6</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>GO_TableBrewery</defName>
+		<label>brewery</label>
+		<thingClass>Building_WorkTable</thingClass>
+		<description>A work station with all the equipment needed to brew beer.</description>
+		<graphicData>
+			<texPath>Things/Building/Kitchen/GO_TableBrewery</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<rect>(0.3,0,2.7,1)</rect>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+
+		<costStuffCount>120</costStuffCount>
+		<costList>
+			<Steel>30</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>GO_Kitchen</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>GraphicOverhaul.ITab_BillsFood</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<researchPrerequisites><li>Brewing</li></researchPrerequisites>
+	</ThingDef>
+
+
+</Defs>

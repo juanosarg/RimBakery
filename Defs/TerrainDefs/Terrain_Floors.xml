@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<TerrainDef ParentName="FloorBase">
+		<defName>Go_KitchenTile</defName>
+		<label>kitchen tile</label>
+		<renderPrecedence>230</renderPrecedence>
+		<description>A cheap linoleum floor. Perfect for kitchens and bathrooms.</description>
+		<texturePath>Terrain/Surfaces/Go_KitchenTile</texturePath>
+		<statBases>
+			<WorkToBuild>200</WorkToBuild>
+		</statBases>
+		<costList>
+			<Steel>2</Steel>
+			<WoodLog>1</WoodLog>
+		</costList>
+		<designationHotKey>Misc5</designationHotKey>
+		<designationCategory>GO_Kitchen</designationCategory>
+
+	</TerrainDef>
+	
+	<TerrainDef ParentName="FloorBase">
+		<defName>Go_KitchenTileDiagonal</defName>
+		<label>diagonal kitchen tile</label>
+		<renderPrecedence>230</renderPrecedence>
+		<description>An elegant linoleum floor. Perfect for kitchens and bathrooms. Prettier than the basic one.</description>
+		<texturePath>Terrain/Surfaces/Go_KitchenTileDiagonal</texturePath>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<Beauty>1</Beauty>
+
+		</statBases>
+		<costList>
+			<Steel>5</Steel>
+			<WoodLog>3</WoodLog>
+		</costList>
+		<designationHotKey>Misc5</designationHotKey>
+		<designationCategory>GO_Kitchen</designationCategory>
+
+	</TerrainDef>
+	
+	<TerrainDef ParentName="FloorBase">
+		<defName>Go_KitchenTileBlue</defName>
+		<label>blue sterile linoleum tile</label>
+		<renderPrecedence>230</renderPrecedence>
+		<description>This clean, epoxy treated linoleum floor is ideal for heavy duty surfaces, such as kitchens. Ugly as sin, though.</description>
+		<texturePath>Terrain/Surfaces/Go_KitchenTileBlue</texturePath>
+		<statBases>
+			<Cleanliness>0.5</Cleanliness>
+			<WorkToBuild>1300</WorkToBuild>
+
+		</statBases>
+		<costList>
+			<Steel>2</Steel>
+			<WoodLog>1</WoodLog>
+			<Silver>6</Silver>
+
+		</costList>
+		<designationHotKey>Misc5</designationHotKey>
+		<designationCategory>GO_Kitchen</designationCategory>
+
+	</TerrainDef>
+
+	
+
+</Defs>

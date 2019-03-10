@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--============================== Orthogonal things ==============================-->
+
+  <DesignationCategoryDef>
+    <defName>GO_OrthoWalls</defName>
+    <label>3D Walls</label>
+    <description>Walls in orthogonal perspective</description>
+    <order>450</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+  
+  <DesignationCategoryDef>
+    <defName>GO_Kitchen</defName>
+    <label>Kitchen</label>
+    <description>Machines and decorations for the kitchen</description>
+    <order>450</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+  
+    <DesignationCategoryDef>
+    <defName>GO_Bedroom</defName>
+    <label>Bedroom</label>
+    <description>Furniture and decorations for the bedroom, hospital, guest house or barracks</description>
+    <order>450</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+
+
+
+</Defs>
